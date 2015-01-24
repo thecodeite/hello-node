@@ -1,9 +1,9 @@
 # DOCKER-VERSION 0.10.0
 
-FROM ubuntu:14.04
+FROM thecodeite/ubuntu-base
 
-# Make sure apt is up to date
-RUN apt-get update
+ADD start.sh /tmp/
 
-# install nodejs and npm
-RUN apt-get install -y nodejs npm git git-core
+RUN chmod +x /tmp/start.sh
+
+CMD ./tmp/start.sh
